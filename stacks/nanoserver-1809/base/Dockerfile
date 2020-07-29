@@ -1,6 +1,7 @@
-FROM mcr.microsoft.com/windows/nanoserver:1809-KB4534273
-ARG cnb_uid=S-1-1-0
-ARG cnb_gid=S-1-1-0
+FROM mcr.microsoft.com/windows/nanoserver:1809
+
+ARG cnb_uid=1
+ARG cnb_gid=1
 
 USER ContainerAdministrator
 
