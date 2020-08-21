@@ -13,3 +13,9 @@ for %%I in (
 
 echo Here are the contents of the current working directory:
 dir /q /s
+
+echo Set output
+set
+echo End set output
+
+echo The value of FOO is %FOO%
