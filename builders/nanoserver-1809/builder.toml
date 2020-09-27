@@ -1,15 +1,21 @@
 # Buildpacks to include in builder
 [[buildpacks]]
-id = "samples/hello-world-windows"
-version = "0.0.1"
-uri = "../../buildpacks/hello-world-windows"
+uri = "../../buildpacks/baselayer-noop"
+
+[[buildpacks]]
+image = "cnbs/sample-package:hello-universe-windows"
 
 # Order used for detection
 [[order]]
 [[order.group]]
-id = "samples/hello-world-windows"
-version = "0.0.1"
+id = "samples/baselayer-windows"
+version = "0.0.2"
 
+#[[order]]
+#[[order.group]]
+#id = "samples/hello-world-windows"
+#version = "0.0.1"
+#
 # Stack that will be used by the builder
 [stack]
 id = "io.buildpacks.samples.stacks.nanoserver-1809"

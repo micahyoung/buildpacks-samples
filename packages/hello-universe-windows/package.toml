@@ -1,0 +1,8 @@
+[buildpack]
+uri = "../../buildpacks/hello-universe-windows/"
+
+[[dependencies]]
+image = "cnbs/sample-package:baselayer-windows"
+
+[[dependencies]]
+uri = "../../buildpacks/hello-world-windows"

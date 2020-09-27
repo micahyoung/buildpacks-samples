@@ -1,0 +1,9 @@
+api = "0.2"
+
+[buildpack]
+  id = "samples/baselayer-windows"
+  version = "0.0.2"
+  name = "No-op baselayer"
+
+[[stacks]]
+  id = "io.buildpacks.samples.stacks.nanoserver-1809"
