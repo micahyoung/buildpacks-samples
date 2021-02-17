@@ -1,0 +1,11 @@
+# Buildpack API version
+api = "0.2"
+
+# Buildpack ID and metadata
+[buildpack]
+id = "samples/whoami-windows"
+version = "0.0.1"
+name = "Whoami Buildpack"
+
+[[stacks]]
+id = "io.buildpacks.samples.stacks.dotnet-framework-1809"
