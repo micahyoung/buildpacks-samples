@@ -150,6 +150,20 @@ build-nanoserver-1809: build-stack-nanoserver-1809 build-builder-nanoserver-1809
 
 build-windows-stacks: build-stack-nanoserver-1809 build-stack-dotnet-framework-1809
 
+build-stack-wine:
+	@echo "> Building 'wine' stack..."
+	bash stacks/build-stack.sh stacks/wine
+
+build-builder-wine: build-sample-root
+	@echo "> Building 'nanoserver-1809' builder..."
+	$(PACK_CMD) create-builder cnbs/sample-builder:wine --config $(SAMPLES_ROOT)/builders/wine/builder.toml $(PACK_FLAGS)
+
+build-wine-apps: build-sample-root
+	@echo "> Creating 'batch-script' app using 'wine' builder..."
+	cd apps/batch-script
+	$(PACK_CMD) build sample-batch-script-app:wine --docker-host=tcp://192.168.2.134:2375 --builder cnbs/sample-builder:wine --path . $(PACK_FLAGS) $(PACK_BUILD_FLAGS)
+	cd ../../
+
 build-stack-nanoserver-1809:
 	@echo "> Building 'nanoserver-1809' stack..."
 	bash stacks/build-stack.sh stacks/nanoserver-1809
